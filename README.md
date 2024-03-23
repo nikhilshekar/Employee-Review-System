@@ -23,7 +23,7 @@ npm install
 ```bash
 npm start or nodemon index.js
 ```
-- visit in your local browser- http://localhost:5000/
+- visit in your local browser- http://localhost:3000/
  
 ## Tech Stack
 - NodeJS
