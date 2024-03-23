@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const url = process.env.DB_URL;
 // Connection to mongodb.
-mongoose.connect(url);
+mongoose.connect("mongodb+srv://nikhilshekar:nikhil@cluster0.tufyorp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 const db = mongoose.connection; // db store the connection
 
