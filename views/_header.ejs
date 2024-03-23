@@ -1,0 +1,65 @@
+<nav
+  class="navbar navbar-expand-md nav-light"
+  style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand me-lg-5" href="/">
+      <img
+        src="/public/images/logo.jpg "
+        alt="Logo"
+        width="50"
+        height="50"
+        class="d-inline-block align-text-top"
+        style="border-radius: 50%; border: 1px solid gray"
+      />
+    </a>
+    <span class="text-center fw-bold fs-5">Employee Review System</span>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <% if(locals.user) {%>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+        <li class="nav-item ms-lg-4">
+          <a class="nav-link fw-semibold" aria-current="page" href="/"
+            ><i class="fa-solid fa-house"></i> Home</a
+          >
+        </li>
+        <% if(locals.user.role === 'admin') {%>
+        <li class="nav-item ms-lg-4">
+          <a
+            class="nav-link fw-semibold"
+            aria-current="page"
+            href="/add-employee"
+            ><i class="fa-solid fa-user-plus"></i></i> Add employee</a
+          >
+        </li>
+        <%} %>
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= user.username %>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item ms-2" href="/sign-out">
+                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                   Sign Out
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+     
+  
+    </div>
+    <%} %>
+  </div>
+</nav>
